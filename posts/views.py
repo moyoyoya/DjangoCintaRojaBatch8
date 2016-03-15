@@ -14,10 +14,16 @@ class PostView(View):
 		'form':form
 		}
 		return render(request,template,context)
-	def post(self,request):
+	def post(self, request):
 		form=PostForm(request.POST)
-		form.save()
+		form.save(commit=False)
 		return redirect('todos')
+
+
+	# def post(self,request):
+	# 	form=PostForm(request.POST)
+	# 	form.save()
+	# 	return redirect('todos')
 
 		
 
