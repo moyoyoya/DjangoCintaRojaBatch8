@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Posts</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{%load static%}
+{%block content%}
 	<h1>Todos los posts:</h1>
 
 	{% for post in posts %}
@@ -18,9 +15,4 @@
 		{% csrf_token %}
 		<p><input type="submit" value="Enviar"></p>
 	</form>
-
-
-
-
-</body>
-</html>
+{%endblock content%}
